@@ -4,7 +4,6 @@
  * because it will make it harder for you to update.
  *
  */
-
 "use strict";
 
 $(function() {
@@ -15,9 +14,10 @@ $(function() {
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
-            { data: 'organisation', name: 'organisation' },
+            { data: 'organization', name: 'organization' },
             { data: 'exam', name: 'exam' },
-            { data: 'trail', name: 'trail' },
+            { data: 'free_mock_tests', name: 'free mock tests' },
+            { data: 'is_registered', name: 'registered' },
             { data: 'action', name: 'action' },
         ],
         "ordering": false
@@ -25,7 +25,7 @@ $(function() {
 
     let hidecolumn = $('#maintable').data('hidecolumn');
     if(!hidecolumn) {
-        table.column( 5 ).visible( false );
+        table.column( 6 ).visible( false );
     }
 
 });

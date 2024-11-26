@@ -50,6 +50,30 @@ Breadcrumbs::for ('payment-setting', function ($trail) {
 
 
 // Dashboard / User
+Breadcrumbs::for ('students', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('validation.attributes.students'), route('admin.students.index'));
+});
+
+// Dashboard / Shop / Edit
+Breadcrumbs::for ('students/add', function ($trail) {
+    $trail->parent('students');
+    $trail->push(trans('validation.attributes.add'));
+});
+
+// Dashboard / Shop / Edit
+Breadcrumbs::for ('students/edit', function ($trail) {
+    $trail->parent('students');
+    $trail->push(trans('validation.attributes.edit'));
+});
+
+// Dashboard / Shop / Edit
+Breadcrumbs::for ('students/view', function ($trail) {
+    $trail->parent('students');
+    $trail->push(trans('validation.attributes.view'));
+});
+
+// Dashboard / User
 Breadcrumbs::for ('administrators', function ($trail) {
     $trail->parent('dashboard');
     $trail->push(trans('validation.attributes.administrators'), route('admin.administrators.index'));
@@ -95,20 +119,22 @@ Breadcrumbs::for ('customers/view', function ($trail) {
 
 
 
-Breadcrumbs::for ('students', function ($trail) {
+
+
+Breadcrumbs::for ('organisations', function ($trail) {
     $trail->parent('dashboard');
-    $trail->push(trans('validation.attributes.students'), route('admin.students.index'));
+    $trail->push(trans('validation.attributes.organisations'), route('admin.organisations.index'));
 });
 
 // Dashboard / Shop / Edit
-Breadcrumbs::for ('students/edit', function ($trail) {
-    $trail->parent('students');
+Breadcrumbs::for ('organisations/edit', function ($trail) {
+    $trail->parent('organisations');
     $trail->push(trans('validation.attributes.edit'));
 });
 
 // Dashboard / Shop / Edit
-Breadcrumbs::for ('students/view', function ($trail) {
-    $trail->parent('students');
+Breadcrumbs::for ('organisations/view', function ($trail) {
+    $trail->parent('organisations');
     $trail->push(trans('validation.attributes.view'));
 });
 

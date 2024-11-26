@@ -212,8 +212,7 @@
 		        <div class="card">
 		            <div class="card-header">
 		                  <div class="card-header-action">
-		                    <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">{{ __('View More') }} <i class="fas fa-chevron-right"></i></a>
-		                </div>
+		                   </div>
 		            </div>
 		            <div class="card-body p-0">
 		                <div class="table-responsive table-invoice">

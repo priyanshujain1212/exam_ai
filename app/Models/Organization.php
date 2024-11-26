@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 
-class Organization extends Model
+class Organization extends BaseModel
 {
-
-    protected $fillable = ['name', 'exam_name', 'exam_url'];
+    protected $table       = 'organizations';
+    protected $auditColumn = false;
+    protected $fillable    = ['id' , 'name' , 'exam_name', 'exam_url'];
 }
