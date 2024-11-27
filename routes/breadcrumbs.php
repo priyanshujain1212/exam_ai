@@ -137,7 +137,10 @@ Breadcrumbs::for ('organisations/view', function ($trail) {
     $trail->parent('organisations');
     $trail->push(trans('validation.attributes.view'));
 });
-
+Breadcrumbs::for ('organisations/add', function ($trail) {
+    $trail->parent('organisations');
+    $trail->push(trans('validation.attributes.add'));
+});
 
 
 // Dashboard / Role

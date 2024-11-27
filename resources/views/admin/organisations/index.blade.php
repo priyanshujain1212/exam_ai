@@ -1,20 +1,19 @@
 @extends('admin.layouts.master')
 
 @section('main-content')
-
+  
   <section class="section">
         <div class="section-header">
             <h1>{{ __('Organisations') }}</h1>
             {{ Breadcrumbs::render('organisations') }}
         </div>
-
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         @can('organisations_create')
                             <div class="card-header">
-                                <a href="{{ route('admin.organisations.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Administrator') }}</a>
+                                <a href="{{ route('admin.organisations.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Organisation') }}</a>
                             </div>
                         @endcan
                         <div class="card-body">
@@ -24,8 +23,6 @@
                                         <tr>
                                             <th>{{ __('ID') }}</th>
                                             <th>{{ __('Name') }}</th>
-                                            <th>{{ __('Exam Name') }}</th>
-                                            <th>{{ __('Exam Url') }}</th>
                                             <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
@@ -37,6 +34,7 @@
             </div>
         </div>
     </section>
+
 @endsection
 
 
@@ -50,5 +48,5 @@
     <script src="{{ asset('assets/modules/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables.net-select-bs4/js/select.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('js/organizations/index.js') }}"></script>
+    <script src="{{ asset('js/organisation/index.js') }}"></script>
 @endsection

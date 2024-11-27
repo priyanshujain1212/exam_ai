@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\UserStatus;
 use App\Http\Controllers\BackendController;
-use App\Http\Requests\AdministratorRequest;
-use App\User;
+use App\Http\Requests\OrganisationsRequest;
+use App\Models\Organisations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -49,25 +49,11 @@ class OrganisationController extends BackendController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( AdministratorRequest $request)
+    public function store( OrganisationsRequest $request)
     {
-        $user             = new User;
-        $user->first_name = $request->first_name;
-        $user->last_name  = $request->last_name;
-        $user->email      = $request->email;
-        $user->username   = $request->username ?? $this->username($request->email);
-        $user->password   = Hash::make(request('password'));
-        $user->phone      = $request->phone;
-        $user->address    = $request->address;
-        $user->status     = $request->status;
-        $user->save();
-
-        if (request()->file('image')) {
-            $user->addMedia(request()->file('image'))->toMediaCollection('user');
-        }
-
-        $role = Role::find(1);
-        $user->assignRole($role->name);
+        $organisations             = new Organisations;
+        $organisations->name       = $request->name;
+        $organisations->save();
 
         return redirect(route('admin.organisations.index'))->withSuccess('The Data Inserted Successfully');
     }
@@ -168,10 +154,10 @@ class OrganisationController extends BackendController
         }
     }
 
-    public function getAdministrators()
+    public function getOrganisations()
     {
-        $role      = Role::find(1);
-        $users     = User::role($role->name)->latest()->get();
+       
+        $users     = Organisations::all();
         $userArray = [];
 
         $i = 1;

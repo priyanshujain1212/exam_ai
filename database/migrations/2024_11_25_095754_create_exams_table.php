@@ -18,7 +18,7 @@ public function up()
         $table->id();
         $table->string('name');
         $table->string('organization');
-        $table->string('exam_pattern_url');
+        $table->string('Exam');
         $table->timestamps();
     });
 }

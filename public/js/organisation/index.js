@@ -14,8 +14,6 @@ $(function() {
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'image' },
-            { data: 'exam name', name: 'exam name' },
-            { data: 'exam url', name: 'exam url' },
             { data: 'action', name: 'action' },
         ],
         "ordering": false
@@ -23,7 +21,7 @@ $(function() {
 
     let hidecolumn = $('#maintable').data('hidecolumn');
     if(!hidecolumn) {
-        table.column( 5 ).visible( false );
+        table.column( 2 ).visible( false );
     }
 
 });

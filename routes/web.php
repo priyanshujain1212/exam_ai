@@ -80,6 +80,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'installed', 'backen
 
     Route::resource('organisations', 'OrganisationController');
     Route::get('get-organisations', 'OrganisationController@getOrganisations')->name('organisations.get-organisations');
+    Route::post('organisations-store', 'OrganisationController@store')->name('organisations.organisations-store');
+
 
     Route::resource('students', 'StudentController');
     Route::get('get-students', 'StudentController@getStudents')->name('students.get-students');
