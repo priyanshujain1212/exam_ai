@@ -11,14 +11,16 @@ class CreateExamsTable extends Migration
      *
      * @return void
      */
-   // database/migrations/xxxx_xx_xx_create_exams_table.php
 public function up()
 {
     Schema::create('exams', function (Blueprint $table) {
         $table->id();
-        $table->string('name');
         $table->string('organization');
         $table->string('Exam');
+        $table->unsignedBigInteger('creator_id')->nullable(); // ID of the user who created the record
+        $table->string('creator_type')->nullable(); // Type of the creator (e.g., App\User)
+        $table->unsignedBigInteger('editor_id')->nullable(); // ID of the user who last edited the record
+        $table->string('editor_type')->nullable(); // Type of the editor (e.g., App\User)
         $table->timestamps();
     });
 }

@@ -82,6 +82,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'installed', 'backen
     Route::get('get-organisations', 'OrganisationController@getOrganisations')->name('organisations.get-organisations');
     Route::post('organisations-store', 'OrganisationController@store')->name('organisations.organisations-store');
 
+    Route::resource('exams', 'ExamsController');
+    Route::get('get-exams', 'ExamsController@getexams')->name('exams.get-exams');
+    Route::post('exams-store', 'ExamsController@store')->name('exams.exams-store');
+
 
     Route::resource('students', 'StudentController');
     Route::get('get-students', 'StudentController@getStudents')->name('students.get-students');

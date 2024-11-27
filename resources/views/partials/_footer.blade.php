@@ -90,7 +90,8 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    const areaUrl = "{{ route('area.index') }}";
+   
+
 </script>
 <script src="{{ asset('frontend/js/script.js') }}" type="text/javascript"></script>
 

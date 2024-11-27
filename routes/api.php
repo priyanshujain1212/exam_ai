@@ -7,8 +7,9 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\MockTestController;
 use App\Http\Controllers\ExamController;
 
-Route::post('/student', [StudentController::class, 'store']);
-Route::get('/organisationexam', [ExamController::class, 'getorganisationexam']);
+Route::post('/student', [ExamController::class, 'store']);
+Route::get('/organizations', [ExamController::class, 'fetchOrganizations']);
+Route::get('/exams/{organization}', [ExamController::class, 'getExamsByOrganization']);
 Route::get('/mock-tests/{exam}', [StudentController::class, 'getMockTests']);
 Route::post('/mock-tests', [MockTestController::class, 'store']);
 
@@ -17,11 +18,6 @@ use App\Http\Controllers\SubscriptionController;
 Route::post('/subscriptions', [SubscriptionController::class, 'store']); // Create a new subscription
 Route::get('/subscriptions/{studentId}', [SubscriptionController::class, 'getSubscriptions']); // Get all subscriptions for a student
 Route::post('/subscriptions/check', [SubscriptionController::class, 'checkSubscription']); // Check subscription validity
-
-use App\Http\Controllers\AIController;
-
-Route::post('/ai/store-data', [AIController::class, 'storeData']); // Store data from AI
-Route::get('/organizations', [AIController::class, 'fetchOrganizations']); // Fetch organizations and their exams
 
 
 

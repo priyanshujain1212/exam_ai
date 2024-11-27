@@ -13,7 +13,8 @@ $(function() {
         ajax: $('#maintable').attr('data-url'),
         columns: [
             { data: 'id', name: 'id' },
-            { data: 'name', name: 'name' },
+            { data: 'exam', name: 'exam' },
+            { data: 'organization', name: 'organization' },
             { data: 'action', name: 'action' },
         ],
         "ordering": false
@@ -21,7 +22,7 @@ $(function() {
 
     let hidecolumn = $('#maintable').data('hidecolumn');
     if(!hidecolumn) {
-        table.column( 2 ).visible( false );
+        table.column( 5 ).visible( false );
     }
 
 });

@@ -143,6 +143,33 @@ Breadcrumbs::for ('organisations/add', function ($trail) {
 });
 
 
+
+
+
+Breadcrumbs::for ('exams', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('validation.attributes.exams'), route('admin.exams.index'));
+});
+
+// Dashboard / Shop / Edit
+Breadcrumbs::for ('exams/edit', function ($trail) {
+    $trail->parent('exams');
+    $trail->push(trans('validation.attributes.edit'));
+});
+
+// Dashboard / Shop / Edit
+Breadcrumbs::for ('exams/view', function ($trail) {
+    $trail->parent('exams');
+    $trail->push(trans('validation.attributes.view'));
+});
+Breadcrumbs::for ('exams/add', function ($trail) {
+    $trail->parent('exams');
+    $trail->push(trans('validation.attributes.add'));
+});
+
+
+
+
 // Dashboard / Role
 Breadcrumbs::for ('roles', function ($trail) {
     $trail->parent('dashboard');
